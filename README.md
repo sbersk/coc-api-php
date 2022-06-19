@@ -1,8 +1,5 @@
 # Clash of Clans API
 
-[![Build Status](https://travis-ci.org/toniperic/php-clash-of-clans.svg?branch=master)](https://travis-ci.org/toniperic/php-clash-of-clans)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/toniperic/php-clash-of-clans/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/toniperic/php-clash-of-clans/?branch=master)
-
 Easily query Supercell's API for Clash of Clans data!
 This package uses official API. For more information, please visit [https://developers.clashofclans.com](https://developers.clashofclans.com)
 
@@ -17,7 +14,7 @@ For using this package, you need to obtain an API key at [https://developer.clas
 ## Installation
 ### Using Composer
 ```
-composer require toniperic/php-clash-of-clans=dev-master
+composer require baerserk/coc-api-php
 ```
 
 ## Usage

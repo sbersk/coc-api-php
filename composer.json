@@ -1,5 +1,5 @@
 {
-    "name": "toniperic/php-clash-of-clans",
+    "name": "baerserk/coc-api-php",
     "description": "PHP wrapper for querying the Supercell Clash of Clans API",
     "require-dev": {
         "phpunit/phpunit": "^4.8",
@@ -11,6 +11,9 @@
         {
             "name": "Toni Peric",
             "email": "toni.peric@hotmail.com"
+        },
+        {
+            "name": "BAERSERK"
         }
     ],
     "autoload": {
