@@ -1,6 +1,6 @@
 <?php
 
-namespace ClashOfClans\Api\WarLog;
+namespace ClashOfClans\Api\CurrentWar;
 
 use ClashOfClans\Api\AbstractResource;
 use ClashOfClans\Api\Clan\Badge;
@@ -11,14 +11,16 @@ use ClashOfClans\Api\Clan\Badge;
  * @method int clanLevel()
  * @method int attacks()
  * @method int stars()
- * @method int expEarned()
+ * @method float destructionPercentage()
+ * @method Members members()
  */
-class WarClan extends AbstractResource
+class CurrentWarClan extends AbstractResource
 {
     protected $casts = [
         'badgeUrls' => Badge::class,
+        'members' => Members::class
     ];
-    
+
     /**
      * @return Badge|null
      */
@@ -26,7 +28,4 @@ class WarClan extends AbstractResource
     {
         return $this->get('badgeUrls');
     }
-   
 }
-
-?>

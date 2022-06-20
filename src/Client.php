@@ -4,6 +4,7 @@ namespace ClashOfClans;
 
 use ClashOfClans\Api\Clan\Clan;
 use ClashOfClans\Api\Clan\Player;
+use ClashOfClans\Api\CurrentWar\CurrentWar;
 use ClashOfClans\Api\WarLog\WarLog;
 use ClashOfClans\Api\League\League;
 use ClashOfClans\Api\Location\Location;
@@ -55,7 +56,20 @@ class Client
             return Clan::makeFromArray($item);
         }, $response['items']);
     }
-    
+
+    /**
+     * Get current war for specific clan
+     *
+     * @param string $tag
+     * @return CurrentWar
+     */
+    public function getClanCurrentWar($tag)
+    {
+        $response = $this->request('clans/' . urlencode($tag) . '/currentwar');
+
+        return CurrentWar::makeFromArray($response);
+    }
+
     /**
      * Get warlog for specific clan
      * 
@@ -64,14 +78,13 @@ class Client
      */
     public function getClanWarLog($tag)
     {
-        $response = $this->request('clans/' . urlencode($tag).'/warlog');
-        
+        $response = $this->request('clans/' . urlencode($tag) . '/warlog');
+
         return array_map(function ($item) {
             return WarLog::makeFromArray($item);
         }, $response['items']);
-
     }
-    
+
     /**
      * Get player info for specific tag
      * 
@@ -81,7 +94,7 @@ class Client
     public function getPlayer($tag)
     {
         $response = $this->request('players/' . urlencode($tag));
-        
+
         return FullPlayer::makeFromArray($response);
     }
 
@@ -147,7 +160,7 @@ class Client
     protected function request($url)
     {
         $response = $this->getHttpClient()
-                         ->request('GET', $url, ['headers' => ['authorization' => 'Bearer ' . $this->getToken()]]);
+            ->request('GET', $url, ['headers' => ['authorization' => 'Bearer ' . $this->getToken()]]);
 
         return ResponseMediator::convertResponseToArray($response);
     }
@@ -178,5 +191,4 @@ class Client
     {
         return $this->token;
     }
-
 }
