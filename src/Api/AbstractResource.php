@@ -92,8 +92,6 @@ abstract class AbstractResource
 
     public function __call($name, $arguments)
     {
-        if ($data = $this->get($name)) {
-            return $data;
-        }
+        return $this->get($name);
     }
 }
