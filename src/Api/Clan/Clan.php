@@ -9,14 +9,18 @@ use ClashOfClans\Api\Location\Location;
  * @method string name()
  * @method string tag()
  * @method string type()
+ * @method string description()
  * @method Location location()
  * @method string warFrequency()
  * @method int clanLevel()
+ * @method int warWinStreak()
  * @method int warWins()
+ * @method int warTies()
+ * @method int warLosses()
  * @method int clanPoints()
+ * @method int clanBuilderBasePoints()
+ * @method int clanCapitalPoints()
  * @method MemberList memberList()
- * @method int rank()
- * @method int previousRank()
  */
 class Clan extends AbstractResource
 {
