@@ -14,7 +14,7 @@ For using this package, you need to obtain an API key at [https://developer.clas
 ## Installation
 ### Using Composer
 ```
-composer require baerserk/coc-api-php
+composer require sbersk/coc-api-php
 ```
 
 ## Usage
